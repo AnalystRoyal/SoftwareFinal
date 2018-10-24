@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
-
+using Seguridad;
 namespace SoftwareFinalAuditoria
 {
     public partial class MDIPrincipal : Form
@@ -24,6 +24,11 @@ namespace SoftwareFinalAuditoria
         private void MDIPrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
+        }
+
+        private void seguridadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Seguridad.Class1.iniciarsesion();
         }
     }
 }

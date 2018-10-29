@@ -32,6 +32,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ObjetivosFramework">
+      <HintPath>..\..\..\..\..\Documents\Visual Studio 2015\Projects\ObjetivosFramework\ObjetivosFramework\bin\Debug\ObjetivosFramework.dll</HintPath>
+    </Reference>
     <Reference Include="Seguridad">
       <HintPath>..\..\..\..\..\Documents\Visual Studio 2015\Projects\Seguridad\Seguridad\bin\Debug\Seguridad.dll</HintPath>
     </Reference>

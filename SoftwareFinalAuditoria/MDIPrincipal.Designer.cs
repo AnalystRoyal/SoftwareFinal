@@ -34,6 +34,7 @@
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administraciónDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asignaciónDeObjetivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,6 +60,8 @@
             // 
             // planificaciónCOBITToolStripMenuItem
             // 
+            this.planificaciónCOBITToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.asignaciónDeObjetivosToolStripMenuItem});
             this.planificaciónCOBITToolStripMenuItem.Name = "planificaciónCOBITToolStripMenuItem";
             this.planificaciónCOBITToolStripMenuItem.Size = new System.Drawing.Size(124, 20);
             this.planificaciónCOBITToolStripMenuItem.Text = "Planificación COBIT";
@@ -81,6 +84,13 @@
             this.seguridadToolStripMenuItem.Size = new System.Drawing.Size(72, 20);
             this.seguridadToolStripMenuItem.Text = "Seguridad";
             this.seguridadToolStripMenuItem.Click += new System.EventHandler(this.seguridadToolStripMenuItem_Click);
+            // 
+            // asignaciónDeObjetivosToolStripMenuItem
+            // 
+            this.asignaciónDeObjetivosToolStripMenuItem.Name = "asignaciónDeObjetivosToolStripMenuItem";
+            this.asignaciónDeObjetivosToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.asignaciónDeObjetivosToolStripMenuItem.Text = "Asignación de objetivos";
+            this.asignaciónDeObjetivosToolStripMenuItem.Click += new System.EventHandler(this.asignaciónDeObjetivosToolStripMenuItem_Click);
             // 
             // MDIPrincipal
             // 
@@ -111,6 +121,7 @@
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem administraciónDeUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem seguridadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem asignaciónDeObjetivosToolStripMenuItem;
     }
 }
 

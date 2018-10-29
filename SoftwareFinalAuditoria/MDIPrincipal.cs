@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Seguridad;
+using ObjetivosFramework;
 namespace SoftwareFinalAuditoria
 {
     public partial class MDIPrincipal : Form
@@ -29,6 +30,13 @@ namespace SoftwareFinalAuditoria
         private void seguridadToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Seguridad.Class1.iniciarsesion();
+        }
+
+        private void asignaciónDeObjetivosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            objetivo ob = new objetivo();
+            ob.MdiParent = this;
+            ob.Show();
         }
     }
 }

@@ -41,3 +41,5 @@ C:\Users\davis\Downloads\DecimoSemestre\Auditoria\Prueba\SoftwareFinalAuditoria\
 C:\Users\davis\Downloads\DecimoSemestre\Auditoria\Prueba\SoftwareFinalAuditoria\obj\Debug\SoftwareFinalAuditoria.Login.resources
 C:\Users\davis\Downloads\DecimoSemestre\Auditoria\Prueba\SoftwareFinalAuditoria\obj\Debug\SoftwareFinalAuditoria.Properties.Resources.resources
 C:\Users\davis\Downloads\DecimoSemestre\Auditoria\Prueba\SoftwareFinalAuditoria\obj\Debug\SoftwareFinalAuditoria.csproj.GenerateResource.Cache
+C:\Users\davis\Downloads\DecimoSemestre\Auditoria\Prueba\SoftwareFinalAuditoria\bin\Debug\Connection.dll
+C:\Users\davis\Downloads\DecimoSemestre\Auditoria\Prueba\SoftwareFinalAuditoria\bin\Debug\Connection.pdb

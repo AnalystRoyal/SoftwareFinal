@@ -41,15 +41,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsignacionApp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsignacionApp.Designer.cs">
+      <DependentUpon>AsignacionApp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="Funciones.cs" />
+    <Compile Include="Listas\Aplicaciones.cs" />
+    <Compile Include="Listas\AppDetalle.cs" />
     <Compile Include="Listas\Perfiles.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MantAplicaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MantAplicaciones.Designer.cs">
+      <DependentUpon>MantAplicaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="MantPerfiles.cs">
       <SubType>Form</SubType>
@@ -71,8 +85,14 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="AsignacionApp.resx">
+      <DependentUpon>AsignacionApp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MantAplicaciones.resx">
+      <DependentUpon>MantAplicaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MantPerfiles.resx">
       <DependentUpon>MantPerfiles.cs</DependentUpon>

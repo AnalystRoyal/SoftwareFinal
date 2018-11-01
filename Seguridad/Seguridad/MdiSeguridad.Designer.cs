@@ -78,6 +78,7 @@
             this.aplicacionesToolStripMenuItem.Name = "aplicacionesToolStripMenuItem";
             this.aplicacionesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.aplicacionesToolStripMenuItem.Text = "Aplicaciones";
+            this.aplicacionesToolStripMenuItem.Click += new System.EventHandler(this.aplicacionesToolStripMenuItem_Click);
             // 
             // procesosToolStripMenuItem
             // 
@@ -99,6 +100,7 @@
             this.asignacionDeAplicacionesToolStripMenuItem.Name = "asignacionDeAplicacionesToolStripMenuItem";
             this.asignacionDeAplicacionesToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
             this.asignacionDeAplicacionesToolStripMenuItem.Text = "Asignacion de Aplicaciones";
+            this.asignacionDeAplicacionesToolStripMenuItem.Click += new System.EventHandler(this.asignacionDeAplicacionesToolStripMenuItem_Click);
             // 
             // MdiSeguridad
             // 

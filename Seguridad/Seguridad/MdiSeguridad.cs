@@ -21,5 +21,17 @@ namespace Seguridad
             MantPerfiles per = new MantPerfiles();
             per.Show();
         }
+
+        private void aplicacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            MantAplicaciones app = new MantAplicaciones();
+            app.Show();
+        }
+
+        private void asignacionDeAplicacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AsignacionApp asiapp = new AsignacionApp();
+            asiapp.Show();
+        }
     }
 }

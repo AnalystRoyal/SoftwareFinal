@@ -18,19 +18,30 @@ namespace Seguridad
 
         private void Guardar_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(Txt_IdPerfil.Text);
             Perfiles per = new Perfiles();
-            per.id_Perfil = id;
+            per.id_Perfil = Convert.ToInt32(Txt_IdPerfil.Text); ;
             per.descrip_Perfil = Txt_DescripPerfil.Text;
             int perfil = Funciones.InsertarPerfil(per);
             if (perfil != 0)
             {
                 MessageBox.Show("Ingreso Exitoso");
+                cargarPerfil();
             }
             else
             {
                 MessageBox.Show("Error al ingresar");
             }
+        }
+
+        private void MantPerfiles_Load(object sender, EventArgs e)
+        {
+            cargarPerfil();
+        }
+
+        public void cargarPerfil()
+        {
+            Dgv_Perfiles.DataSource = Funciones.MostarPerfiles();
+            
         }
     }
 }

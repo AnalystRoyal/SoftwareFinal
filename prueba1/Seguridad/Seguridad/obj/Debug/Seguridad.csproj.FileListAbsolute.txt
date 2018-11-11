@@ -1,0 +1,11 @@
+d:\users\raul\documents\visual studio 2015\Projects\Seguridad\Seguridad\bin\Debug\Seguridad.dll
+d:\users\raul\documents\visual studio 2015\Projects\Seguridad\Seguridad\bin\Debug\Seguridad.pdb
+d:\users\raul\documents\visual studio 2015\Projects\Seguridad\Seguridad\obj\Debug\Seguridad.MdiSeguridad.resources
+d:\users\raul\documents\visual studio 2015\Projects\Seguridad\Seguridad\obj\Debug\Seguridad.csproj.GenerateResource.Cache
+d:\users\raul\documents\visual studio 2015\Projects\Seguridad\Seguridad\obj\Debug\Seguridad.dll
+d:\users\raul\documents\visual studio 2015\Projects\Seguridad\Seguridad\obj\Debug\Seguridad.pdb
+d:\users\raul\documents\visual studio 2015\Projects\Seguridad\Seguridad\obj\Debug\Seguridad.Login.resources
+d:\Users\Raul\Documents\Visual Studio 2015\Projects\Seguridad\Seguridad\obj\Debug\Seguridad.MantPerfiles.resources
+d:\Users\Raul\Documents\Visual Studio 2015\Projects\Seguridad\Seguridad\obj\Debug\Seguridad.MantAplicaciones.resources
+d:\Users\Raul\Documents\Visual Studio 2015\Projects\Seguridad\Seguridad\obj\Debug\Seguridad.AsignacionApp.resources
+d:\Users\Raul\Documents\Visual Studio 2015\Projects\Seguridad\Seguridad\obj\Debug\Seguridad.MantUsuarios.resources

@@ -31,10 +31,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.planificaciónCOBITToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.asignaciónDeObjetivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.administraciónDeUsuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.seguridadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.asignaciónDeObjetivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.reporteSubobjetivosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -66,8 +67,17 @@
             this.planificaciónCOBITToolStripMenuItem.Size = new System.Drawing.Size(124, 20);
             this.planificaciónCOBITToolStripMenuItem.Text = "Planificación COBIT";
             // 
+            // asignaciónDeObjetivosToolStripMenuItem
+            // 
+            this.asignaciónDeObjetivosToolStripMenuItem.Name = "asignaciónDeObjetivosToolStripMenuItem";
+            this.asignaciónDeObjetivosToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
+            this.asignaciónDeObjetivosToolStripMenuItem.Text = "Asignación de objetivos";
+            this.asignaciónDeObjetivosToolStripMenuItem.Click += new System.EventHandler(this.asignaciónDeObjetivosToolStripMenuItem_Click);
+            // 
             // reportesToolStripMenuItem
             // 
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.reporteSubobjetivosToolStripMenuItem});
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "Reportes";
@@ -85,12 +95,11 @@
             this.seguridadToolStripMenuItem.Text = "Seguridad";
             this.seguridadToolStripMenuItem.Click += new System.EventHandler(this.seguridadToolStripMenuItem_Click);
             // 
-            // asignaciónDeObjetivosToolStripMenuItem
+            // reporteSubobjetivosToolStripMenuItem
             // 
-            this.asignaciónDeObjetivosToolStripMenuItem.Name = "asignaciónDeObjetivosToolStripMenuItem";
-            this.asignaciónDeObjetivosToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
-            this.asignaciónDeObjetivosToolStripMenuItem.Text = "Asignación de objetivos";
-            this.asignaciónDeObjetivosToolStripMenuItem.Click += new System.EventHandler(this.asignaciónDeObjetivosToolStripMenuItem_Click);
+            this.reporteSubobjetivosToolStripMenuItem.Name = "reporteSubobjetivosToolStripMenuItem";
+            this.reporteSubobjetivosToolStripMenuItem.Size = new System.Drawing.Size(191, 22);
+            this.reporteSubobjetivosToolStripMenuItem.Text = "Reporte Sub-objetivos";
             // 
             // MDIPrincipal
             // 
@@ -122,6 +131,7 @@
         private System.Windows.Forms.ToolStripMenuItem administraciónDeUsuariosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem seguridadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem asignaciónDeObjetivosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reporteSubobjetivosToolStripMenuItem;
     }
 }
 

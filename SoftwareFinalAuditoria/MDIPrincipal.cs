@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using Seguridad;
 using ObjetivosFramework;
+using reporte_objetivo;
 namespace SoftwareFinalAuditoria
 {
     public partial class MDIPrincipal : Form
@@ -19,7 +20,9 @@ namespace SoftwareFinalAuditoria
 
         private void MDIPrincipal_Load(object sender, EventArgs e)
         {
-
+            frm_rpt_subobjetivo fr = new frm_rpt_subobjetivo();
+            fr.MdiParent = this;
+            fr.Show();
         }
 
         private void MDIPrincipal_FormClosed(object sender, FormClosedEventArgs e)

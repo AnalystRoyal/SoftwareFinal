@@ -51,6 +51,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BusquedaAreas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusquedaAreas.Designer.cs">
+      <DependentUpon>BusquedaAreas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="BusquedaAuditores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BusquedaAuditores.Designer.cs">
+      <DependentUpon>BusquedaAuditores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Cambio.cs" />
     <Compile Include="Capa_Datos.cs" />
     <Compile Include="Capa_Logica.cs" />
     <Compile Include="Empresa.cs">
@@ -73,6 +86,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="BusquedaAreas.resx">
+      <DependentUpon>BusquedaAreas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BusquedaAuditores.resx">
+      <DependentUpon>BusquedaAuditores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Empresa.resx">
       <DependentUpon>Empresa.cs</DependentUpon>
     </EmbeddedResource>
@@ -89,6 +108,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\nuevo.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\guardar.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\aceptar.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelar.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

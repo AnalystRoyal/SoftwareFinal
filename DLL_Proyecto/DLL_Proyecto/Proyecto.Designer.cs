@@ -43,16 +43,21 @@
             this.Dtg_Recursos_TI = new System.Windows.Forms.DataGridView();
             this.Dtg_Informes = new System.Windows.Forms.DataGridView();
             this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.Txt_Total_Dias_Proyecto = new System.Windows.Forms.TextBox();
+            this.Txt_idProyecto = new System.Windows.Forms.TextBox();
+            this.guardar = new System.Windows.Forms.PictureBox();
             this.Btn_Agregar_Tipo_Proyecto = new System.Windows.Forms.Button();
             this.Btn_Agregar_Empresa = new System.Windows.Forms.Button();
             this.Btn_Agregar_Informes = new System.Windows.Forms.Button();
             this.Btn_Agregar_Recursos_TI = new System.Windows.Forms.Button();
             this.Btn_Agregar_Auditores = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.Txt_Total_Dias_Proyecto = new System.Windows.Forms.TextBox();
+            this.Cancelar = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.Dtg_Ingreso_Auditores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dtg_Recursos_TI)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dtg_Informes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guardar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cancelar)).BeginInit();
             this.SuspendLayout();
             // 
             // navegador1
@@ -138,6 +143,7 @@
             // 
             // Dtg_Ingreso_Auditores
             // 
+            this.Dtg_Ingreso_Auditores.AllowUserToAddRows = false;
             this.Dtg_Ingreso_Auditores.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dtg_Ingreso_Auditores.Location = new System.Drawing.Point(16, 240);
             this.Dtg_Ingreso_Auditores.Name = "Dtg_Ingreso_Auditores";
@@ -164,6 +170,7 @@
             // 
             // Dtg_Recursos_TI
             // 
+            this.Dtg_Recursos_TI.AllowUserToAddRows = false;
             this.Dtg_Recursos_TI.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dtg_Recursos_TI.Location = new System.Drawing.Point(262, 240);
             this.Dtg_Recursos_TI.Name = "Dtg_Recursos_TI";
@@ -172,6 +179,7 @@
             // 
             // Dtg_Informes
             // 
+            this.Dtg_Informes.AllowUserToAddRows = false;
             this.Dtg_Informes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.Dtg_Informes.Location = new System.Drawing.Point(508, 240);
             this.Dtg_Informes.Name = "Dtg_Informes";
@@ -187,6 +195,40 @@
             this.label7.TabIndex = 14;
             this.label7.Text = "Informes";
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(9, 171);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(136, 13);
+            this.label8.TabIndex = 21;
+            this.label8.Text = "Total De Dias Del Proyecto";
+            // 
+            // Txt_Total_Dias_Proyecto
+            // 
+            this.Txt_Total_Dias_Proyecto.Location = new System.Drawing.Point(151, 168);
+            this.Txt_Total_Dias_Proyecto.Name = "Txt_Total_Dias_Proyecto";
+            this.Txt_Total_Dias_Proyecto.Size = new System.Drawing.Size(100, 20);
+            this.Txt_Total_Dias_Proyecto.TabIndex = 22;
+            // 
+            // Txt_idProyecto
+            // 
+            this.Txt_idProyecto.Location = new System.Drawing.Point(435, 164);
+            this.Txt_idProyecto.Name = "Txt_idProyecto";
+            this.Txt_idProyecto.Size = new System.Drawing.Size(100, 20);
+            this.Txt_idProyecto.TabIndex = 23;
+            // 
+            // guardar
+            // 
+            this.guardar.BackColor = System.Drawing.Color.Transparent;
+            this.guardar.Image = global::DLL_Proyecto.Properties.Resources.guardar;
+            this.guardar.Location = new System.Drawing.Point(174, 12);
+            this.guardar.Name = "guardar";
+            this.guardar.Size = new System.Drawing.Size(46, 46);
+            this.guardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guardar.TabIndex = 24;
+            this.guardar.TabStop = false;
+            // 
             // Btn_Agregar_Tipo_Proyecto
             // 
             this.Btn_Agregar_Tipo_Proyecto.Image = global::DLL_Proyecto.Properties.Resources.nuevo;
@@ -198,6 +240,7 @@
             this.Btn_Agregar_Tipo_Proyecto.Text = "Nuevo";
             this.Btn_Agregar_Tipo_Proyecto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_Agregar_Tipo_Proyecto.UseVisualStyleBackColor = true;
+            this.Btn_Agregar_Tipo_Proyecto.Click += new System.EventHandler(this.Btn_Agregar_Tipo_Proyecto_Click);
             // 
             // Btn_Agregar_Empresa
             // 
@@ -210,6 +253,7 @@
             this.Btn_Agregar_Empresa.Text = "Nuevo";
             this.Btn_Agregar_Empresa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_Agregar_Empresa.UseVisualStyleBackColor = true;
+            this.Btn_Agregar_Empresa.Click += new System.EventHandler(this.Btn_Agregar_Empresa_Click);
             // 
             // Btn_Agregar_Informes
             // 
@@ -247,27 +291,24 @@
             this.Btn_Agregar_Auditores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_Agregar_Auditores.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // Cancelar
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(9, 171);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(136, 13);
-            this.label8.TabIndex = 21;
-            this.label8.Text = "Total De Dias Del Proyecto";
-            // 
-            // Txt_Total_Dias_Proyecto
-            // 
-            this.Txt_Total_Dias_Proyecto.Location = new System.Drawing.Point(151, 168);
-            this.Txt_Total_Dias_Proyecto.Name = "Txt_Total_Dias_Proyecto";
-            this.Txt_Total_Dias_Proyecto.Size = new System.Drawing.Size(100, 20);
-            this.Txt_Total_Dias_Proyecto.TabIndex = 22;
+            this.Cancelar.Image = global::DLL_Proyecto.Properties.Resources.cancelar;
+            this.Cancelar.Location = new System.Drawing.Point(226, 12);
+            this.Cancelar.Name = "Cancelar";
+            this.Cancelar.Size = new System.Drawing.Size(46, 46);
+            this.Cancelar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Cancelar.TabIndex = 25;
+            this.Cancelar.TabStop = false;
             // 
             // Proyecto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 496);
+            this.Controls.Add(this.Cancelar);
+            this.Controls.Add(this.guardar);
+            this.Controls.Add(this.Txt_idProyecto);
             this.Controls.Add(this.Txt_Total_Dias_Proyecto);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.Btn_Agregar_Tipo_Proyecto);
@@ -292,9 +333,12 @@
             this.Controls.Add(this.navegador1);
             this.Name = "Proyecto";
             this.Text = "Proyecto";
+            this.Load += new System.EventHandler(this.Proyecto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Dtg_Ingreso_Auditores)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dtg_Recursos_TI)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dtg_Informes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guardar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cancelar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,5 +368,8 @@
         private System.Windows.Forms.Button Btn_Agregar_Tipo_Proyecto;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox Txt_Total_Dias_Proyecto;
+        private System.Windows.Forms.TextBox Txt_idProyecto;
+        private System.Windows.Forms.PictureBox guardar;
+        private System.Windows.Forms.PictureBox Cancelar;
     }
 }

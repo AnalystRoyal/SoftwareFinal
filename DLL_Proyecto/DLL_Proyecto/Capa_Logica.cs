@@ -10,5 +10,23 @@ namespace DLL_Proyecto
 {
     public class Capa_Logica
     {
+        OdbcCommand comando;
+        OdbcDataReader lector;
+
+        public void buscar(TextBox name)
+        {
+
+            string sentencia = "SELECT MAX(idProyecto) AS ID FROM proyecto";
+
+            comando = new OdbcCommand(sentencia, Capa_Datos.conex());
+            Capa_Datos.conex();
+
+            lector = comando.ExecuteReader();
+
+            if (lector.Read() == true)
+            {
+                name.Text = lector["ID"].ToString();
+            }
+        }
     }
 }

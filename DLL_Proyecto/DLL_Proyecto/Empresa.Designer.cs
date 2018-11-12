@@ -37,10 +37,14 @@
             this.Txt_Dirrecion = new System.Windows.Forms.TextBox();
             this.Txt_Telefono = new System.Windows.Forms.TextBox();
             this.Txt_Contacto = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Dgv_Areas = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
+            this.Cancelar = new System.Windows.Forms.PictureBox();
+            this.guardar = new System.Windows.Forms.PictureBox();
             this.Btn_Agregar_Areas = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Areas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cancelar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guardar)).BeginInit();
             this.SuspendLayout();
             // 
             // navegador1
@@ -96,7 +100,7 @@
             // 
             // Txt_Nombre
             // 
-            this.Txt_Nombre.Location = new System.Drawing.Point(171, 109);
+            this.Txt_Nombre.Location = new System.Drawing.Point(153, 106);
             this.Txt_Nombre.Name = "Txt_Nombre";
             this.Txt_Nombre.Size = new System.Drawing.Size(100, 20);
             this.Txt_Nombre.TabIndex = 5;
@@ -104,7 +108,7 @@
             // 
             // Txt_Dirrecion
             // 
-            this.Txt_Dirrecion.Location = new System.Drawing.Point(171, 139);
+            this.Txt_Dirrecion.Location = new System.Drawing.Point(153, 136);
             this.Txt_Dirrecion.Name = "Txt_Dirrecion";
             this.Txt_Dirrecion.Size = new System.Drawing.Size(100, 20);
             this.Txt_Dirrecion.TabIndex = 6;
@@ -112,7 +116,7 @@
             // 
             // Txt_Telefono
             // 
-            this.Txt_Telefono.Location = new System.Drawing.Point(171, 169);
+            this.Txt_Telefono.Location = new System.Drawing.Point(153, 166);
             this.Txt_Telefono.Name = "Txt_Telefono";
             this.Txt_Telefono.Size = new System.Drawing.Size(100, 20);
             this.Txt_Telefono.TabIndex = 7;
@@ -120,19 +124,20 @@
             // 
             // Txt_Contacto
             // 
-            this.Txt_Contacto.Location = new System.Drawing.Point(171, 199);
+            this.Txt_Contacto.Location = new System.Drawing.Point(153, 196);
             this.Txt_Contacto.Name = "Txt_Contacto";
             this.Txt_Contacto.Size = new System.Drawing.Size(100, 20);
             this.Txt_Contacto.TabIndex = 8;
             this.Txt_Contacto.Tag = "Contacto";
             // 
-            // dataGridView1
+            // Dgv_Areas
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(93, 225);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 9;
+            this.Dgv_Areas.AllowUserToAddRows = false;
+            this.Dgv_Areas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.Dgv_Areas.Location = new System.Drawing.Point(93, 235);
+            this.Dgv_Areas.Name = "Dgv_Areas";
+            this.Dgv_Areas.Size = new System.Drawing.Size(240, 150);
+            this.Dgv_Areas.TabIndex = 9;
             // 
             // label5
             // 
@@ -143,26 +148,51 @@
             this.label5.TabIndex = 10;
             this.label5.Text = "Agregar Areas";
             // 
+            // Cancelar
+            // 
+            this.Cancelar.Image = global::DLL_Proyecto.Properties.Resources.cancelar;
+            this.Cancelar.Location = new System.Drawing.Point(226, 12);
+            this.Cancelar.Name = "Cancelar";
+            this.Cancelar.Size = new System.Drawing.Size(46, 46);
+            this.Cancelar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.Cancelar.TabIndex = 19;
+            this.Cancelar.TabStop = false;
+            // 
+            // guardar
+            // 
+            this.guardar.BackColor = System.Drawing.Color.Transparent;
+            this.guardar.Image = global::DLL_Proyecto.Properties.Resources.guardar;
+            this.guardar.Location = new System.Drawing.Point(174, 12);
+            this.guardar.Name = "guardar";
+            this.guardar.Size = new System.Drawing.Size(46, 46);
+            this.guardar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.guardar.TabIndex = 18;
+            this.guardar.TabStop = false;
+            this.guardar.Click += new System.EventHandler(this.guardar_Click);
+            // 
             // Btn_Agregar_Areas
             // 
             this.Btn_Agregar_Areas.Image = global::DLL_Proyecto.Properties.Resources.agregar;
             this.Btn_Agregar_Areas.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Btn_Agregar_Areas.Location = new System.Drawing.Point(351, 235);
+            this.Btn_Agregar_Areas.Location = new System.Drawing.Point(348, 235);
             this.Btn_Agregar_Areas.Name = "Btn_Agregar_Areas";
             this.Btn_Agregar_Areas.Size = new System.Drawing.Size(121, 65);
             this.Btn_Agregar_Areas.TabIndex = 17;
             this.Btn_Agregar_Areas.Text = "Agregar";
             this.Btn_Agregar_Areas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Btn_Agregar_Areas.UseVisualStyleBackColor = true;
+            this.Btn_Agregar_Areas.Click += new System.EventHandler(this.Btn_Agregar_Areas_Click);
             // 
             // Empresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(695, 439);
+            this.Controls.Add(this.Cancelar);
+            this.Controls.Add(this.guardar);
             this.Controls.Add(this.Btn_Agregar_Areas);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Dgv_Areas);
             this.Controls.Add(this.Txt_Contacto);
             this.Controls.Add(this.Txt_Telefono);
             this.Controls.Add(this.Txt_Dirrecion);
@@ -174,7 +204,10 @@
             this.Controls.Add(this.navegador1);
             this.Name = "Empresa";
             this.Text = "Empresa";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.Empresa_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.Dgv_Areas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.Cancelar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guardar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -191,8 +224,10 @@
         private System.Windows.Forms.TextBox Txt_Dirrecion;
         private System.Windows.Forms.TextBox Txt_Telefono;
         private System.Windows.Forms.TextBox Txt_Contacto;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView Dgv_Areas;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button Btn_Agregar_Areas;
+        private System.Windows.Forms.PictureBox guardar;
+        private System.Windows.Forms.PictureBox Cancelar;
     }
 }

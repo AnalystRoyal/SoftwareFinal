@@ -63,21 +63,21 @@
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             this.usuariosToolStripMenuItem.Click += new System.EventHandler(this.usuariosToolStripMenuItem_Click);
             // 
             // perfilesToolStripMenuItem
             // 
             this.perfilesToolStripMenuItem.Name = "perfilesToolStripMenuItem";
-            this.perfilesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.perfilesToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.perfilesToolStripMenuItem.Text = "Perfiles";
             this.perfilesToolStripMenuItem.Click += new System.EventHandler(this.perfilesToolStripMenuItem_Click);
             // 
             // aplicacionesToolStripMenuItem
             // 
             this.aplicacionesToolStripMenuItem.Name = "aplicacionesToolStripMenuItem";
-            this.aplicacionesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.aplicacionesToolStripMenuItem.Size = new System.Drawing.Size(141, 22);
             this.aplicacionesToolStripMenuItem.Text = "Aplicaciones";
             this.aplicacionesToolStripMenuItem.Click += new System.EventHandler(this.aplicacionesToolStripMenuItem_Click);
             // 
@@ -95,6 +95,7 @@
             this.asignacionDePerfilesToolStripMenuItem.Name = "asignacionDePerfilesToolStripMenuItem";
             this.asignacionDePerfilesToolStripMenuItem.Size = new System.Drawing.Size(219, 22);
             this.asignacionDePerfilesToolStripMenuItem.Text = "Asignacion de Perfiles";
+            this.asignacionDePerfilesToolStripMenuItem.Click += new System.EventHandler(this.asignacionDePerfilesToolStripMenuItem_Click);
             // 
             // asignacionDeAplicacionesToolStripMenuItem
             // 

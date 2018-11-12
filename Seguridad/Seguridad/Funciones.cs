@@ -134,5 +134,34 @@ namespace Seguridad
             }
             return usu;
         }
+        public static int IngresoDetalleAsigPerfil(DetalleAsigPerfil add)
+        {
+            int retorno = 0;
+            try
+            {
+                OdbcCommand comando = new OdbcCommand(String.Format("INSERT into asignacion_perfil values('{0}','{1}')", add.IDUsuario, add.IDPerfil), Conexion.getDB());
+                retorno = comando.ExecuteNonQuery();
+                return retorno;
+            }
+            catch (Exception)
+            {
+                return retorno;
+            }
+        }
+
+        public static List<Perfiles> mostrarAsignacion(int idu)
+        {
+            List<Perfiles> det = new List<Perfiles>();
+            OdbcCommand comando = new OdbcCommand(String.Format("select p.idPerfil, p.descrip_Perfil from perfil p,asignacion_perfil a where a.id_Perfil = p.idPerfil and a.id_Usuario = '{0}'",idu), Conexion.getDB());
+            OdbcDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                Perfiles per = new Perfiles();
+                per.id_Perfil = Convert.ToInt32(reader.GetString(0));
+                per.descrip_Perfil = reader.GetString(1);
+                det.Add(per);
+            }
+            return det;
+        }
     }
 }

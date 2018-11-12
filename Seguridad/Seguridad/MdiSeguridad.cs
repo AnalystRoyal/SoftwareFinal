@@ -39,5 +39,11 @@ namespace Seguridad
             MantUsuarios mant = new MantUsuarios();
             mant.Show();
         }
+
+        private void asignacionDePerfilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AsignacionPerfil aspe = new AsignacionPerfil();
+            aspe.Show();
+        }
     }
 }

@@ -47,6 +47,12 @@
     <Compile Include="AsignacionApp.Designer.cs">
       <DependentUpon>AsignacionApp.cs</DependentUpon>
     </Compile>
+    <Compile Include="AsignacionPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AsignacionPerfil.Designer.cs">
+      <DependentUpon>AsignacionPerfil.cs</DependentUpon>
+    </Compile>
     <Compile Include="Class1.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="DataSets\DSUsuarios.cs">
@@ -60,6 +66,7 @@
     <Compile Include="Funciones.cs" />
     <Compile Include="Listas\Aplicaciones.cs" />
     <Compile Include="Listas\AppDetalle.cs" />
+    <Compile Include="Listas\DetalleAsigPerfil.cs" />
     <Compile Include="Listas\Ingreso.cs" />
     <Compile Include="Listas\Perfiles.cs" />
     <Compile Include="Listas\Usuarios.cs" />
@@ -103,6 +110,9 @@
   <ItemGroup>
     <EmbeddedResource Include="AsignacionApp.resx">
       <DependentUpon>AsignacionApp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AsignacionPerfil.resx">
+      <DependentUpon>AsignacionPerfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

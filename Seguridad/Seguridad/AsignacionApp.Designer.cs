@@ -47,6 +47,7 @@
             this.Cmb_Perfil.Name = "Cmb_Perfil";
             this.Cmb_Perfil.Size = new System.Drawing.Size(356, 21);
             this.Cmb_Perfil.TabIndex = 0;
+            this.Cmb_Perfil.SelectedIndexChanged += new System.EventHandler(this.Cmb_Perfil_SelectedIndexChanged);
             // 
             // Dgv_App
             // 

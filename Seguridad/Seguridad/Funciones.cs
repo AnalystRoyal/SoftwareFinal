@@ -163,5 +163,21 @@ namespace Seguridad
             }
             return det;
         }
+        public static int IngresoDetalleApp(AppDetalle add)
+        {
+            int retorno = 0;
+            try
+            {
+                OdbcCommand comando = new OdbcCommand(string.Format("insert into aplicaciones_detalle values ('{0}','{1}','{2}','{3}','{4}')",add.id_Perfil,add.id_app,add.create,add.update,add.delete), Conexion.getDB());
+                retorno = comando.ExecuteNonQuery();
+                return retorno;
+            }
+            catch (Exception)
+            {
+
+                return retorno;
+            }
+
+        }
     }
 }

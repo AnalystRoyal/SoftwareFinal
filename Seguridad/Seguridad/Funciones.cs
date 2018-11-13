@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using Seguridad.Listas;
 using System.Data.Odbc;
+using System.Net;
 
 namespace Seguridad
 {
@@ -178,6 +179,78 @@ namespace Seguridad
                 return retorno;
             }
 
+        }
+        public static List<Vistaappdetalle> MostrarAsigApp(int per)
+        {
+            List<Vistaappdetalle> appdet = new List<Vistaappdetalle>();
+            OdbcCommand comando = new OdbcCommand(String.Format("select a.idAplicaciones, a.descrip_Aplicacion,d.create, d.update,d.delete from aplicaciones_encabezado a, aplicaciones_detalle d where a.idAplicaciones = d.id_Aplicacion and d.id_Perfil = '{0}';", per), Conexion.getDB());
+            OdbcDataReader reader = comando.ExecuteReader();
+            while (reader.Read())
+            {
+                Vistaappdetalle app = new Vistaappdetalle();
+                app.id_perfil = Convert.ToInt32(reader.GetString(0));
+                app.descrip_perfil = reader.GetString(1);
+                app.create = Convert.ToInt16( reader.GetString(2));
+                app.update = Convert.ToInt16(reader.GetString(3));
+                app.delete = Convert.ToInt16(reader.GetString(4));
+                appdet.Add(app);
+            }
+            return appdet;
+        }
+        public static string obtenerIP()
+        {
+            string ipr = "";
+            IPHostEntry host;
+
+            host = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (IPAddress ip in host.AddressList)
+            {
+                if (ip.AddressFamily.ToString() == "InterNetwork")
+                {
+                    ipr = ip.ToString();
+                    return ipr;
+                }
+            }
+            return ipr;
+            //MessageBox.Show(Globales.localIP);
+        }
+        public static void IngresoBitacora(string accion, string app)
+        {
+            string ip = obtenerIP();
+            string fecha = DateTime.Now.ToString("yyyyMMdd");
+            string hora = DateTime.Now.ToString("HH:mm:ssss");
+            try
+            {
+                OdbcCommand comando = new OdbcCommand(string.Format("Insert into bitacora(id_Usuario, fecha_bitacora, hora_bitacora, accion_bitacora, aplicacion_bitacora,error_bitacora) values('{0}','{1}','{2}','{3}','{4}','{5}')", Globales.idUsuario, fecha, hora, accion, app, ip), Conexion.getDB());
+                comando.ExecuteNonQuery();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            
+        }
+
+        public static int ObtenerUsuario(string usuario, string pswd)
+        {
+            int ret = 0;
+            OdbcCommand comando = new OdbcCommand(String.Format("Select * from usuarios where nickname_Usuario = '{0}' and pswd_Usuario ='{1}'", usuario, pswd), Conexion.getDB());
+            OdbcDataReader reader = comando.ExecuteReader();
+            if (reader.Read())
+            {
+                ret = Convert.ToInt32(reader.GetString(0));
+                return ret;
+            }
+            else
+            {
+                return ret;
+            }
+
+        }
+       public static class Globales
+        {
+            public static int idUsuario;
         }
     }
 }

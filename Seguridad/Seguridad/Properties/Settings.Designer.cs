@@ -25,8 +25,7 @@ namespace Seguridad.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Driver={MySQL ODBC 5.3 ANSI Driver};server=127.0.0.1;uid=root;pwd=;database=seguridad" +
-   "auditoria;port=3306")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Driver={MySQL ODBC 5.3 ANSI Driver};server=127.0.0.1;uid=root;pwd=;database=auditoria;port=3306")]
         public string ruta
         {
             get

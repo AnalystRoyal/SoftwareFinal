@@ -107,7 +107,7 @@ namespace Seguridad
         {
             bool resp = false;
             DetalleAsigPerfil dap = new DetalleAsigPerfil();
-            dap.IDUsuario = Convert.ToInt32(Cmb_Usuario.SelectedIndex);
+            dap.IDUsuario = Convert.ToInt32(Cmb_Usuario.SelectedValue);
             foreach (DataGridViewRow item in Dgv_Asignacion.Rows)
             {
                 dap.IDPerfil = Convert.ToInt32(item.Cells[0].Value);
@@ -126,21 +126,24 @@ namespace Seguridad
 
         private void Cmb_Usuario_SelectedIndexChanged(object sender, EventArgs e)
         {
+            
+          //  Dgv_Asignacion.DataSource = Funciones.mostrarAsignacion(idu);
+        }
+
+        private void Cmb_Usuario_SelectionChangeCommitted(object sender, EventArgs e)
+        {
             Dgv_Asignacion.Rows.Clear();
-            int idu = Convert.ToInt32(Cmb_Usuario.SelectedIndex);
+            int idu = Convert.ToInt32(Cmb_Usuario.SelectedValue);
             int p = 0;
             int q = Funciones.mostrarAsignacion(idu).Count;
             foreach (var item in Funciones.mostrarAsignacion(idu))
             {
-                if (p!=q)
+                if (p != q)
                 {
                     Dgv_Asignacion.Rows.Add(item.id_Perfil, item.descrip_Perfil);
                     p++;
                 }
-                   
-                      
             }
-          //  Dgv_Asignacion.DataSource = Funciones.mostrarAsignacion(idu);
-        }
+        }  
     }
 }

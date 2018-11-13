@@ -27,6 +27,7 @@ namespace Seguridad
                 if (rt == true)
                 {
                     MessageBox.Show("Conexión Exitosa");
+                    Funciones.Globales.idUsuario = Funciones.ObtenerUsuario(usuario,pswd);
                     this.Hide();
                     mdi.Show();
                 }

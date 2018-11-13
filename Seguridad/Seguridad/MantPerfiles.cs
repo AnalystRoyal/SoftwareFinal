@@ -30,6 +30,7 @@ namespace Seguridad
                 if (perfil != 0)
                 {
                     MessageBox.Show("Ingreso Exitoso");
+                    Funciones.IngresoBitacora("insertar", "mantperfiles");
                     cargarPerfil();
                 }
                 else

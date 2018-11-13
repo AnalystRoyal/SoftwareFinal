@@ -49,6 +49,7 @@
             this.Cmb_Usuario.Size = new System.Drawing.Size(456, 21);
             this.Cmb_Usuario.TabIndex = 0;
             this.Cmb_Usuario.SelectedIndexChanged += new System.EventHandler(this.Cmb_Usuario_SelectedIndexChanged);
+            this.Cmb_Usuario.SelectionChangeCommitted += new System.EventHandler(this.Cmb_Usuario_SelectionChangeCommitted);
             // 
             // label1
             // 

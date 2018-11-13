@@ -66,10 +66,12 @@
     <Compile Include="Funciones.cs" />
     <Compile Include="Listas\Aplicaciones.cs" />
     <Compile Include="Listas\AppDetalle.cs" />
+    <Compile Include="Listas\Bitacora.cs" />
     <Compile Include="Listas\DetalleAsigPerfil.cs" />
     <Compile Include="Listas\Ingreso.cs" />
     <Compile Include="Listas\Perfiles.cs" />
     <Compile Include="Listas\Usuarios.cs" />
+    <Compile Include="Listas\Vistaappdetalle.cs" />
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>

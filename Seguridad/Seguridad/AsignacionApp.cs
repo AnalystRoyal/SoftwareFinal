@@ -173,7 +173,76 @@ namespace Seguridad
 
         private void Cmb_Perfil_SelectedIndexChanged(object sender, EventArgs e)
         {
+           /* Dgv_Asignacion.Rows.Clear();
+            int perfil = Convert.ToInt32(Cmb_Perfil.SelectedValue.ToString());
+            int p = 0;
+            int q = Funciones.MostrarAsigApp(perfil).Count;
+            foreach (var item in Funciones.MostrarAsigApp(perfil))
+            { 
+                if (p!=q)
+                {
+                    Dgv_Asignacion.Rows.Add(item.id_perfil, item.descrip_perfil);
+                    p++;
+                }
+                if (item.create == 1)
+                {
+                    Dgv_Asignacion.CurrentRow.Cells[2].Value = true;
+                }else
+                {
+                    Dgv_Asignacion.CurrentRow.Cells[2].Value = false;
+                }
+                if (item.update == 1)
+                {
+                    Dgv_Asignacion.CurrentRow.Cells[3].Value = true;
+                }else
+                {
+                    Dgv_Asignacion.CurrentRow.Cells[3].Value = false;
+                }
+                if (item.delete == 1)
+                {
+                    Dgv_Asignacion.CurrentRow.Cells[4].Value = true;
+                }else
+                {
+                    Dgv_Asignacion.CurrentRow.Cells[4].Value = false;
+                }
+            }*/
+        }
 
+        private void Cmb_Perfil_SelectedValueChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void Cmb_Perfil_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            Dgv_Asignacion.Rows.Clear();
+            int perfil = Convert.ToInt32(Cmb_Perfil.SelectedValue);
+            int p = 0;
+            int q = Funciones.MostrarAsigApp(perfil).Count;
+            foreach (var item in Funciones.MostrarAsigApp(perfil))
+            {
+                if (p != q)
+                {
+                    Dgv_Asignacion.Rows.Add(item.id_perfil, item.descrip_perfil);
+                    if (item.create == 1)
+                    {
+                        Dgv_Asignacion.Rows[p].Cells[2].Value = true;
+                    }
+                    
+                    if (item.update == 1)
+                    {
+                        Dgv_Asignacion.Rows[p].Cells[3].Value = true;
+                    }
+                   
+                    if (item.delete == 1)
+                    {
+                        Dgv_Asignacion.Rows[p].Cells[4].Value = true;
+                    }
+
+                    p++;
+                }
+                
+            }
         }
     }
 }

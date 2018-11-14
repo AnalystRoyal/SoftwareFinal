@@ -34,6 +34,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Dgv_Perfiles = new System.Windows.Forms.DataGridView();
+            this.Btn_Update = new System.Windows.Forms.Button();
+            this.Btn_Delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Perfiles)).BeginInit();
             this.SuspendLayout();
             // 
@@ -86,12 +88,35 @@
             this.Dgv_Perfiles.Name = "Dgv_Perfiles";
             this.Dgv_Perfiles.Size = new System.Drawing.Size(408, 204);
             this.Dgv_Perfiles.TabIndex = 5;
+            this.Dgv_Perfiles.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.Dgv_Perfiles_CellContentDoubleClick);
+            // 
+            // Btn_Update
+            // 
+            this.Btn_Update.Location = new System.Drawing.Point(320, 298);
+            this.Btn_Update.Name = "Btn_Update";
+            this.Btn_Update.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Update.TabIndex = 6;
+            this.Btn_Update.Text = "Actualizar";
+            this.Btn_Update.UseVisualStyleBackColor = true;
+            this.Btn_Update.Click += new System.EventHandler(this.Btn_Update_Click);
+            // 
+            // Btn_Delete
+            // 
+            this.Btn_Delete.Location = new System.Drawing.Point(424, 297);
+            this.Btn_Delete.Name = "Btn_Delete";
+            this.Btn_Delete.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Delete.TabIndex = 7;
+            this.Btn_Delete.Text = "Eliminar";
+            this.Btn_Delete.UseVisualStyleBackColor = true;
+            this.Btn_Delete.Click += new System.EventHandler(this.Btn_Delete_Click);
             // 
             // MantPerfiles
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(779, 363);
+            this.Controls.Add(this.Btn_Delete);
+            this.Controls.Add(this.Btn_Update);
             this.Controls.Add(this.Dgv_Perfiles);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -99,6 +124,7 @@
             this.Controls.Add(this.Txt_IdPerfil);
             this.Controls.Add(this.Guardar);
             this.Name = "MantPerfiles";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MantPerfiles";
             this.Load += new System.EventHandler(this.MantPerfiles_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Perfiles)).EndInit();
@@ -115,5 +141,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView Dgv_Perfiles;
+        private System.Windows.Forms.Button Btn_Update;
+        private System.Windows.Forms.Button Btn_Delete;
     }
 }

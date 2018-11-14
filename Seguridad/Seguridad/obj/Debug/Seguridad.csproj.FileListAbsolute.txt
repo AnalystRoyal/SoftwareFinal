@@ -10,3 +10,4 @@ d:\Users\Raul\Documents\Visual Studio 2015\Projects\Seguridad\Seguridad\obj\Debu
 d:\Users\Raul\Documents\Visual Studio 2015\Projects\Seguridad\Seguridad\obj\Debug\Seguridad.AsignacionApp.resources
 d:\Users\Raul\Documents\Visual Studio 2015\Projects\Seguridad\Seguridad\obj\Debug\Seguridad.MantUsuarios.resources
 d:\Users\Raul\Documents\Visual Studio 2015\Projects\Seguridad\Seguridad\obj\Debug\Seguridad.AsignacionPerfil.resources
+d:\Users\Raul\Documents\Visual Studio 2015\Projects\Seguridad\Seguridad\obj\Debug\Seguridad.csprojResolveAssemblyReference.cache

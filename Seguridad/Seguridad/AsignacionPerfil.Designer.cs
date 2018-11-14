@@ -37,6 +37,8 @@
             this.Btn_SelUno = new System.Windows.Forms.Button();
             this.Dgv_Asignacion = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.Btn_Update = new System.Windows.Forms.Button();
+            this.Btn_Delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Perfil)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Asignacion)).BeginInit();
             this.SuspendLayout();
@@ -118,7 +120,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(330, 430);
+            this.button1.Location = new System.Drawing.Point(235, 460);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 13;
@@ -126,11 +128,33 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // Btn_Update
+            // 
+            this.Btn_Update.Location = new System.Drawing.Point(330, 460);
+            this.Btn_Update.Name = "Btn_Update";
+            this.Btn_Update.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Update.TabIndex = 14;
+            this.Btn_Update.Text = "Actualizar";
+            this.Btn_Update.UseVisualStyleBackColor = true;
+            this.Btn_Update.Click += new System.EventHandler(this.Btn_Update_Click);
+            // 
+            // Btn_Delete
+            // 
+            this.Btn_Delete.Location = new System.Drawing.Point(425, 459);
+            this.Btn_Delete.Name = "Btn_Delete";
+            this.Btn_Delete.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Delete.TabIndex = 15;
+            this.Btn_Delete.Text = "Eliminar";
+            this.Btn_Delete.UseVisualStyleBackColor = true;
+            this.Btn_Delete.Click += new System.EventHandler(this.Btn_Delete_Click);
+            // 
             // AsignacionPerfil
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(751, 487);
+            this.ClientSize = new System.Drawing.Size(768, 543);
+            this.Controls.Add(this.Btn_Delete);
+            this.Controls.Add(this.Btn_Update);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.Dgv_Asignacion);
             this.Controls.Add(this.Btn_RegTodos);
@@ -141,6 +165,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Cmb_Usuario);
             this.Name = "AsignacionPerfil";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AsignacionPerfil";
             this.Load += new System.EventHandler(this.AsignacionPerfil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Perfil)).EndInit();
@@ -161,5 +186,7 @@
         private System.Windows.Forms.Button Btn_SelUno;
         private System.Windows.Forms.DataGridView Dgv_Asignacion;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button Btn_Update;
+        private System.Windows.Forms.Button Btn_Delete;
     }
 }

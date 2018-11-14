@@ -173,39 +173,7 @@ namespace Seguridad
 
         private void Cmb_Perfil_SelectedIndexChanged(object sender, EventArgs e)
         {
-           /* Dgv_Asignacion.Rows.Clear();
-            int perfil = Convert.ToInt32(Cmb_Perfil.SelectedValue.ToString());
-            int p = 0;
-            int q = Funciones.MostrarAsigApp(perfil).Count;
-            foreach (var item in Funciones.MostrarAsigApp(perfil))
-            { 
-                if (p!=q)
-                {
-                    Dgv_Asignacion.Rows.Add(item.id_perfil, item.descrip_perfil);
-                    p++;
-                }
-                if (item.create == 1)
-                {
-                    Dgv_Asignacion.CurrentRow.Cells[2].Value = true;
-                }else
-                {
-                    Dgv_Asignacion.CurrentRow.Cells[2].Value = false;
-                }
-                if (item.update == 1)
-                {
-                    Dgv_Asignacion.CurrentRow.Cells[3].Value = true;
-                }else
-                {
-                    Dgv_Asignacion.CurrentRow.Cells[3].Value = false;
-                }
-                if (item.delete == 1)
-                {
-                    Dgv_Asignacion.CurrentRow.Cells[4].Value = true;
-                }else
-                {
-                    Dgv_Asignacion.CurrentRow.Cells[4].Value = false;
-                }
-            }*/
+           
         }
 
         private void Cmb_Perfil_SelectedValueChanged(object sender, EventArgs e)
@@ -242,6 +210,82 @@ namespace Seguridad
                     p++;
                 }
                 
+            }
+        }
+
+        private void Btn_Delete_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(Cmb_Perfil.SelectedValue);
+            int ret = Funciones.EliminarAsigApp(id);
+            if (ret !=0)
+            {
+                MessageBox.Show("Eliminar con Exito");
+                Funciones.IngresoBitacora("Eliminar", "Asignacion app");
+                Dgv_Asignacion.Rows.Clear();
+
+            }
+            else
+            {
+                MessageBox.Show("Error");
+            }
+        }
+
+        private void Btn_Update_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(Cmb_Perfil.SelectedValue);
+            int ret2 = Funciones.EliminarAsigApp(id);
+            if (ret2 != 0)
+            {
+                int ret = 0;
+                AppDetalle appdet = new AppDetalle();
+                appdet.id_Perfil = id;
+
+                foreach (DataGridViewRow item in Dgv_Asignacion.Rows)
+                {
+                    appdet.id_app = Convert.ToInt32(item.Cells[0].Value);
+                    bool create = Convert.ToBoolean(item.Cells[2].Value);
+                    bool update = Convert.ToBoolean(item.Cells[3].Value);
+                    bool delete = Convert.ToBoolean(item.Cells[4].Value);
+                    if (create == true)
+                    {
+                        appdet.create = 1;
+                    }
+                    else
+                    {
+                        appdet.create = 0;
+
+                    }
+                    if (update == true)
+                    {
+                        appdet.update = 1;
+                    }
+                    else
+                    {
+                        appdet.update = 0;
+                    }
+                    if (delete == true)
+                    {
+                        appdet.delete = 1;
+                    }
+                    else
+                    {
+                        appdet.delete = 0;
+                    }
+                    ret = Funciones.IngresoDetalleApp(appdet);
+                }
+                if (ret != 0)
+                {
+                    MessageBox.Show("Actualizar Exitoso");
+                    Funciones.IngresoBitacora("Actualizar", "Asignacion APP");
+                }
+                else
+                {
+                    MessageBox.Show("Error");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Error");
             }
         }
     }

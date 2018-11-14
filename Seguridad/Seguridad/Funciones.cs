@@ -8,7 +8,7 @@ using System.Net;
 
 namespace Seguridad
 {
-  public  class Funciones
+    public class Funciones
     {
         public static int InsertarPerfil(Perfiles add)
         {
@@ -24,7 +24,7 @@ namespace Seguridad
 
                 return retorno;
             }
-            
+
         }
 
         public static int InsertarApp(Aplicaciones add)
@@ -32,7 +32,7 @@ namespace Seguridad
             int retorno = 0;
             try
             {
-               OdbcCommand comando = new OdbcCommand(String.Format("INSERT into aplicaciones_encabezado values('{0}','{1}')", add.id_App, add.descrip_App), Conexion.getDB());
+                OdbcCommand comando = new OdbcCommand(String.Format("INSERT into aplicaciones_encabezado values('{0}','{1}')", add.id_App, add.descrip_App), Conexion.getDB());
                 retorno = comando.ExecuteNonQuery();
                 return retorno;
             }
@@ -40,9 +40,9 @@ namespace Seguridad
             {
                 return retorno;
             }
-            
+
         }
-        public static List<Aplicaciones> MostarApp ()
+        public static List<Aplicaciones> MostarApp()
         {
             List<Aplicaciones> App = new List<Aplicaciones>();
             OdbcCommand comando = new OdbcCommand(String.Format("Select * from aplicaciones_encabezado;"), Conexion.getDB());
@@ -52,7 +52,7 @@ namespace Seguridad
                 Aplicaciones api = new Aplicaciones();
                 api.id_App = reader.GetInt32(0);
                 api.descrip_App = reader.GetString(1);
-              App.Add(api);
+                App.Add(api);
             }
             return App;
         }
@@ -64,7 +64,7 @@ namespace Seguridad
             while (reader.Read())
             {
                 Perfiles perf = new Perfiles();
-                perf.id_Perfil= reader.GetInt32(0);
+                perf.id_Perfil = reader.GetInt32(0);
                 perf.descrip_Perfil = reader.GetString(1);
                 Per.Add(perf);
             }
@@ -75,7 +75,7 @@ namespace Seguridad
             int retorno = 0;
             try
             {
-                OdbcCommand comando = new OdbcCommand(String.Format("INSERT into aplicaciones_detalle values('{0}','{1}','{2}','{3}','{4}')", add.id_Perfil, add.id_app, add.create, add.update,add.delete), Conexion.getDB());
+                OdbcCommand comando = new OdbcCommand(String.Format("INSERT into aplicaciones_detalle values('{0}','{1}','{2}','{3}','{4}')", add.id_Perfil, add.id_app, add.create, add.update, add.delete), Conexion.getDB());
                 retorno = comando.ExecuteNonQuery();
                 return retorno;
             }
@@ -88,18 +88,19 @@ namespace Seguridad
 
         public static bool IngresoSesion(string usuario, string pswd)
         {
-           
-                OdbcCommand comando = new OdbcCommand(String.Format("Select * from usuarios where nickname_Usuario = '{0}' and pswd_Usuario ='{1}'", usuario, pswd), Conexion.getDB());
-                OdbcDataReader reader = comando.ExecuteReader();
-                if (reader.Read())
-                {
 
-                    return true;
-            }else
+            OdbcCommand comando = new OdbcCommand(String.Format("Select * from usuarios where nickname_Usuario = '{0}' and pswd_Usuario ='{1}'", usuario, pswd), Conexion.getDB());
+            OdbcDataReader reader = comando.ExecuteReader();
+            if (reader.Read())
+            {
+
+                return true;
+            }
+            else
             {
                 return false;
             }
-            
+
         }
 
         public static int IngresoUsuario(Usuarios add)
@@ -107,7 +108,7 @@ namespace Seguridad
             int retorno = 0;
             try
             {
-                OdbcCommand comando = new OdbcCommand(String.Format("INSERT into usuarios(nombre_usuario,apellido_usuario,telefono_usuario,correo_usuario,nickname_usuario,pswd_usuario) values('{0}','{1}','{2}','{3}','{4}','{5}')", add.NOMBRE, add.APELLIDO, add.TELEFONO, add.CORREO, add.USUARIO, add.PSWD ), Conexion.getDB());
+                OdbcCommand comando = new OdbcCommand(String.Format("INSERT into usuarios(nombre_usuario,apellido_usuario,telefono_usuario,correo_usuario,nickname_usuario,pswd_usuario) values('{0}','{1}','{2}','{3}','{4}','{5}')", add.NOMBRE, add.APELLIDO, add.TELEFONO, add.CORREO, add.USUARIO, add.PSWD), Conexion.getDB());
                 retorno = comando.ExecuteNonQuery();
                 return retorno;
             }
@@ -153,7 +154,7 @@ namespace Seguridad
         public static List<Perfiles> mostrarAsignacion(int idu)
         {
             List<Perfiles> det = new List<Perfiles>();
-            OdbcCommand comando = new OdbcCommand(String.Format("select p.idPerfil, p.descrip_Perfil from perfil p,asignacion_perfil a where a.id_Perfil = p.idPerfil and a.id_Usuario = '{0}'",idu), Conexion.getDB());
+            OdbcCommand comando = new OdbcCommand(String.Format("select p.idPerfil, p.descrip_Perfil from perfil p,asignacion_perfil a where a.id_Perfil = p.idPerfil and a.id_Usuario = '{0}'", idu), Conexion.getDB());
             OdbcDataReader reader = comando.ExecuteReader();
             while (reader.Read())
             {
@@ -169,7 +170,7 @@ namespace Seguridad
             int retorno = 0;
             try
             {
-                OdbcCommand comando = new OdbcCommand(string.Format("insert into aplicaciones_detalle values ('{0}','{1}','{2}','{3}','{4}')",add.id_Perfil,add.id_app,add.create,add.update,add.delete), Conexion.getDB());
+                OdbcCommand comando = new OdbcCommand(string.Format("insert into aplicaciones_detalle values ('{0}','{1}','{2}','{3}','{4}')", add.id_Perfil, add.id_app, add.create, add.update, add.delete), Conexion.getDB());
                 retorno = comando.ExecuteNonQuery();
                 return retorno;
             }
@@ -190,7 +191,7 @@ namespace Seguridad
                 Vistaappdetalle app = new Vistaappdetalle();
                 app.id_perfil = Convert.ToInt32(reader.GetString(0));
                 app.descrip_perfil = reader.GetString(1);
-                app.create = Convert.ToInt16( reader.GetString(2));
+                app.create = Convert.ToInt16(reader.GetString(2));
                 app.update = Convert.ToInt16(reader.GetString(3));
                 app.delete = Convert.ToInt16(reader.GetString(4));
                 appdet.Add(app);
@@ -229,7 +230,7 @@ namespace Seguridad
 
                 throw;
             }
-            
+
         }
 
         public static int ObtenerUsuario(string usuario, string pswd)
@@ -248,9 +249,129 @@ namespace Seguridad
             }
 
         }
-       public static class Globales
+        public static class Globales
         {
             public static int idUsuario;
+        }
+
+        public static int EliminarAsigPerfil(int id)
+        {
+            int retorno = 0;
+            try
+            {
+                OdbcCommand comando = new OdbcCommand(string.Format("Delete from asignacion_perfil where id_Usuario = '{0}'", id), Conexion.getDB());
+                retorno = comando.ExecuteNonQuery();
+                return retorno;
+            }
+            catch (Exception)
+            {
+                return retorno;
+            }
+        }
+        public static int EliminarAsigApp(int id)
+        {
+            int retorno = 0;
+            try
+            {
+                OdbcCommand comando = new OdbcCommand(string.Format("Delete From aplicaciones_detalle where id_Perfil = '{0}'", id), Conexion.getDB());
+                retorno = comando.ExecuteNonQuery();
+                return retorno;
+            }
+            catch (Exception)
+            {
+                return retorno;
+            }
+        }
+        public static int EliminarMantApp(int id)
+        {
+            int retorno = 0;
+            try
+            {
+                OdbcCommand comando = new OdbcCommand(string.Format("Delete From aplicaciones_encabezado where idAplicaciones = '{0}'", id), Conexion.getDB());
+                retorno = comando.ExecuteNonQuery();
+                return retorno;
+            }
+            catch (Exception)
+            {
+
+                return retorno;
+            }
+        }
+        public static int EliminarMantPerfil(int id)
+        {
+            int retorno = 0;
+            try
+            {
+                OdbcCommand comando = new OdbcCommand(string.Format("Delete From perfil where idPerfil = '{0}'", id), Conexion.getDB());
+                retorno = comando.ExecuteNonQuery();
+                return retorno;
+            }
+            catch (Exception)
+            {
+
+                return retorno;
+            }
+        }
+        public static int EliminarMantUsuarios(int id)
+        {
+            int retorno = 0;
+            try
+            {
+                OdbcCommand comando = new OdbcCommand(string.Format("Delete From usuarios where idUsuarios = '{0}'", id), Conexion.getDB());
+                retorno = comando.ExecuteNonQuery();
+                return retorno;
+            }
+            catch (Exception)
+            {
+
+                return retorno;
+            }
+        }
+        public static int UpdateMantUsuarios(Usuarios add)
+        {
+            int retorno = 0;
+            try
+            {
+                OdbcCommand comando = new OdbcCommand(string.Format("Update usuarios set nombre_Usuario = '{0}', apellido_Usuario = '{1}', telefono_Usuario = '{2}', correo_Usuario = '{3}',nickname_Usuario ='{4}' where idUsuarios = '{5}'"
+                    , add.NOMBRE,add.APELLIDO,add.TELEFONO,add.CORREO,add.USUARIO, add.ID),Conexion.getDB());
+                retorno = comando.ExecuteNonQuery();
+                return retorno;
+            }
+            catch (Exception)
+            {
+
+                return retorno;
+            }
+
+        }
+        public static int UpdatePerfil(Perfiles add)
+        {
+            int retorno = 0;
+            try
+            {
+                OdbcCommand comando = new OdbcCommand(string.Format("Update perfil set descrip_Perfil = '{0}' where idPerfil = '{1}'", add.descrip_Perfil,add.id_Perfil), Conexion.getDB());
+                retorno = comando.ExecuteNonQuery();
+                return retorno;
+            }
+            catch (Exception)
+            {
+
+                return retorno;
+            }
+        }
+        public static int UpdateMantApp(Aplicaciones add)
+        {
+            int retorno = 0;
+            try
+            {
+                OdbcCommand comando = new OdbcCommand(string.Format("Update aplicaciones_encabezado set descrip_Aplicacion = '{0}' where idAplicaciones = '{1}'", add.id_App, add.descrip_App), Conexion.getDB());
+                retorno = comando.ExecuteNonQuery();
+                return retorno;
+            }
+            catch (Exception)
+            {
+                return retorno;
+            }
         }
     }
 }

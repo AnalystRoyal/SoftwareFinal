@@ -144,6 +144,53 @@ namespace Seguridad
                     p++;
                 }
             }
-        }  
+        }
+
+        private void Btn_Delete_Click(object sender, EventArgs e)
+        {
+            int perfil = Convert.ToInt32(Cmb_Usuario.SelectedValue);
+            int ret = Funciones.EliminarAsigPerfil(perfil);
+            if (ret != 0)
+            {
+                MessageBox.Show("Eliminado Con Exito");
+                Funciones.IngresoBitacora("Eliminar", "Asignacion Perfil");
+                Dgv_Asignacion.Rows.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Error");
+            }
+
+        }
+
+        private void Btn_Update_Click(object sender, EventArgs e)
+        {
+            DetalleAsigPerfil dap = new DetalleAsigPerfil();
+            bool resp = false;
+            int id = Convert.ToInt32(Cmb_Usuario.SelectedValue);
+            int ret2 = Funciones.EliminarAsigPerfil(id);
+            if (ret2 !=0)
+            {
+                dap.IDUsuario = Convert.ToInt32(Cmb_Usuario.SelectedValue);
+                foreach (DataGridViewRow item in Dgv_Asignacion.Rows)
+                {
+                    dap.IDPerfil = Convert.ToInt32(item.Cells[0].Value);
+                    int ret = Funciones.IngresoDetalleAsigPerfil(dap);
+                    if (ret == 0)
+                    {
+                        MessageBox.Show("Error al Actualizar");
+                        resp = true;
+                    }
+                }
+                if (resp == false)
+                {
+                    MessageBox.Show("Actualizar Exitoso");
+                    Funciones.IngresoBitacora("Actualizar", "Asignacion Perfil");
+                }
+            }else
+            {
+                MessageBox.Show("Error");
+            }
+        }
     }
 }

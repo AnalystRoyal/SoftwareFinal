@@ -36,6 +36,8 @@
             this.Btn_SelTodos = new System.Windows.Forms.Button();
             this.Btn_RegUno = new System.Windows.Forms.Button();
             this.Btn_RegTodos = new System.Windows.Forms.Button();
+            this.Btn_Update = new System.Windows.Forms.Button();
+            this.Btn_Delete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_App)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_Asignacion)).BeginInit();
             this.SuspendLayout();
@@ -69,7 +71,7 @@
             // 
             // Btn_Guardar
             // 
-            this.Btn_Guardar.Location = new System.Drawing.Point(304, 355);
+            this.Btn_Guardar.Location = new System.Drawing.Point(254, 391);
             this.Btn_Guardar.Name = "Btn_Guardar";
             this.Btn_Guardar.Size = new System.Drawing.Size(75, 23);
             this.Btn_Guardar.TabIndex = 3;
@@ -117,11 +119,33 @@
             this.Btn_RegTodos.UseVisualStyleBackColor = true;
             this.Btn_RegTodos.Click += new System.EventHandler(this.Btn_RegTodos_Click);
             // 
+            // Btn_Update
+            // 
+            this.Btn_Update.Location = new System.Drawing.Point(367, 391);
+            this.Btn_Update.Name = "Btn_Update";
+            this.Btn_Update.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Update.TabIndex = 8;
+            this.Btn_Update.Text = "Actualizar";
+            this.Btn_Update.UseVisualStyleBackColor = true;
+            this.Btn_Update.Click += new System.EventHandler(this.Btn_Update_Click);
+            // 
+            // Btn_Delete
+            // 
+            this.Btn_Delete.Location = new System.Drawing.Point(484, 391);
+            this.Btn_Delete.Name = "Btn_Delete";
+            this.Btn_Delete.Size = new System.Drawing.Size(75, 23);
+            this.Btn_Delete.TabIndex = 9;
+            this.Btn_Delete.Text = "Eliminar";
+            this.Btn_Delete.UseVisualStyleBackColor = true;
+            this.Btn_Delete.Click += new System.EventHandler(this.Btn_Delete_Click);
+            // 
             // AsignacionApp
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(856, 408);
+            this.ClientSize = new System.Drawing.Size(856, 455);
+            this.Controls.Add(this.Btn_Delete);
+            this.Controls.Add(this.Btn_Update);
             this.Controls.Add(this.Btn_RegTodos);
             this.Controls.Add(this.Btn_RegUno);
             this.Controls.Add(this.Btn_SelTodos);
@@ -131,6 +155,7 @@
             this.Controls.Add(this.Dgv_App);
             this.Controls.Add(this.Cmb_Perfil);
             this.Name = "AsignacionApp";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AsignacionApp";
             this.Load += new System.EventHandler(this.AsignacionApp_Load);
             ((System.ComponentModel.ISupportInitialize)(this.Dgv_App)).EndInit();
@@ -149,5 +174,7 @@
         private System.Windows.Forms.Button Btn_SelTodos;
         private System.Windows.Forms.Button Btn_RegUno;
         private System.Windows.Forms.Button Btn_RegTodos;
+        private System.Windows.Forms.Button Btn_Update;
+        private System.Windows.Forms.Button Btn_Delete;
     }
 }

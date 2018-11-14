@@ -50,5 +50,46 @@ namespace Seguridad
         {
             Dgv_App.DataSource = Funciones.MostarApp();
         }
+
+        private void Btn_Delete_Click(object sender, EventArgs e)
+        {
+            int id = Convert.ToInt32(txt_IdApp.Text);
+            int ret = Funciones.EliminarMantApp(id);
+            if (ret !=0)
+            {
+                MessageBox.Show("Eliminado con Exito");
+                Funciones.IngresoBitacora("Eliminar", "Mantenimiento APP");
+                txt_DescripApp.Text = "";
+                txt_IdApp.Text = "";
+                cargarDgv();
+            }else
+            {
+                MessageBox.Show("Error");
+            }
+
+        }
+
+        private void Dgv_App_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txt_IdApp.Text = Dgv_App.CurrentRow.Cells[0].Value.ToString();
+            txt_DescripApp.Text = Dgv_App.CurrentRow.Cells[1].Value.ToString();
+        }
+
+        private void Btn_Update_Click(object sender, EventArgs e)
+        {
+            Aplicaciones app = new Aplicaciones();
+            app.id_App = Convert.ToInt32(txt_IdApp.Text);
+            app.descrip_App = txt_DescripApp.Text;
+            int ret = Funciones.UpdateMantApp(app);
+            if (ret !=0)
+            {
+                MessageBox.Show("Actualizado con Exito");
+                Funciones.IngresoBitacora("Actualizar", "Mantenimiento App");
+                cargarDgv();
+            }else
+            {
+                MessageBox.Show("Error");
+            }
+        }
     }
 }
